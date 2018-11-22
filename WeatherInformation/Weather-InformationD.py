@@ -7,6 +7,11 @@ Choice = "Y"
 api_Address = "http://api.openweathermap.org/data/2.5/weather?q="
 api_ID = "&APPID=f9b5b60caa372024f1e419aa12803552"
 
+def choiceCheck(Choice):
+    if Choice!="Y" and Choice!="N":
+        print("The choice entered is wrong.Try Again")
+        print("---------------------------------------------------------------------")
+
 while Choice != "N" :
     try:
 
@@ -40,9 +45,7 @@ while Choice != "N" :
             Choice = input("Do you want to search for another city? Yes(Y)|No(N)")
             Choice = Choice.upper()
             print("-------------------------------------------------------------------------")
-            if Choice !="N" and Choice !="Y":
-                print("The choice Entered is wrong.Try again")
-                print("---------------------------------------------------------------------")
+            choiceCheck(Choice)
     except:
              print("-------------------------------------------------------------------------")
              print("Either this city doesn´t exist or the program could not find the data.")
@@ -50,9 +53,7 @@ while Choice != "N" :
              Choice = input("Do you want to search for another city? Yes(Y)|No(N)")
              Choice = Choice.upper()
              print("-------------------------------------------------------------------------")
-             if Choice != "N" and Choice != "Y":
-                print("The choice Entered is wrong.Try Again")
-                print("----------------------------------------------------------------------")
+             choiceCheck(Choice)
 else:
     print("-------------------------------------------------------------------------")
     print("I hope you liked the program :) Thanks")
