@@ -7,7 +7,7 @@ Choice = "Y"
 api_Address = "http://api.openweathermap.org/data/2.5/weather?q="
 api_ID = "&APPID=f9b5b60caa372024f1e419aa12803552"
 
-while Choice != "N":
+while Choice != "N" :
     try:
 
 
@@ -34,19 +34,25 @@ while Choice != "N":
             print("The humidity is: " + str(humidity) + " %")
             print("The visibility is: " + str(visibility) + "m")
             print("The wind speed is: " + str(wind_speed) + " km/h")
-            print("the temp is: " + str(temp_info - ABSOLUTE_ZERO) + " Degrees")
+            print("The temp is: " + str(temp_info - ABSOLUTE_ZERO) + " Degrees")
 
             print("-------------------------------------------------------------------------")
             Choice = input("Do you want to search for another city? Yes(Y)|No(N)")
             Choice = Choice.upper()
             print("-------------------------------------------------------------------------")
+            if Choice !="N" and Choice !="Y":
+                print("The choice Entered is wrong.Try again")
+                print("---------------------------------------------------------------------")
     except:
              print("-------------------------------------------------------------------------")
-             print("Either this country doesn´t exist or the program could not find the data.")
+             print("Either this city doesn´t exist or the program could not find the data.")
              print("-------------------------------------------------------------------------")
              Choice = input("Do you want to search for another city? Yes(Y)|No(N)")
              Choice = Choice.upper()
              print("-------------------------------------------------------------------------")
+             if Choice != "N" and Choice != "Y":
+                print("The choice Entered is wrong.Try Again")
+                print("----------------------------------------------------------------------")
 else:
     print("-------------------------------------------------------------------------")
     print("I hope you liked the program :) Thanks")
